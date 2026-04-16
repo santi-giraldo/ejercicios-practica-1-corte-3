@@ -64,19 +64,17 @@ public:
         return -1;
     }
 };
+
 int main() {
     cout << "--- PRUEBA MEETUP CALENDAR ---" << endl;
     MeetupCalendar meetup;
     
-    // Prueba 1
     int date1 = meetup.getMeetupDate(2020, 5, "Wednesday", "teenth");
     cout << "Teenth Wednesday de Mayo 2020 (Esperado 13): " << date1 << endl;
     
-    // Prueba 2
     int date2 = meetup.getMeetupDate(2018, 1, "Monday", "first");
     cout << "Primer Lunes de Enero 2018 (Esperado 1): " << date2 << endl;
     
-    // Prueba 3
     int date3 = meetup.getMeetupDate(2021, 7, "Sunday", "fourth");
     cout << "Cuarto Domingo de Julio 2021 (Esperado 25): " << date3 << endl;
     
