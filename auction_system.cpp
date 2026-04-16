@@ -43,3 +43,27 @@ public:
         return itemBids[itemId].rbegin()->second;
     }
 };
+
+int main() {
+    cout << "--- PRUEBA AUCTION SYSTEM ---" << endl;
+    AuctionSystem* auction = new AuctionSystem();
+    
+    auction->addBid(1, 7, 5);
+    auction->addBid(2, 7, 6);
+    
+    cout << "Mejor postor para item 7: " 
+         << auction->getHighestBidder(7) << endl; 
+         
+    auction->updateBid(1, 7, 8); 
+    
+    cout << "Mejor postor para item 7 despues de actualizar: " 
+         << auction->getHighestBidder(7) << endl;
+         
+    auction->removeBid(1, 7); 
+    
+    cout << "Mejor postor para item 7 despues de eliminar: " 
+         << auction->getHighestBidder(7) << endl; 
+         
+    delete auction;
+    return 0;
+}
