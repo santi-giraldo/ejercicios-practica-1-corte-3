@@ -36,3 +36,25 @@ public:
         return (double)data.first / data.second;
     }
 };
+
+int main() {
+    cout << "--- PRUEBA UNDERGROUND SYSTEM ---" << endl;
+    UndergroundSystem* undergroundSystem = new UndergroundSystem();
+    
+    undergroundSystem->checkIn(45, "Leyton", 3);
+    undergroundSystem->checkIn(32, "Paradise", 8);
+    undergroundSystem->checkIn(27, "Leyton", 10);
+    
+    undergroundSystem->checkOut(45, "Waterloo", 15);
+    undergroundSystem->checkOut(27, "Waterloo", 20);
+    undergroundSystem->checkOut(32, "Cambridge", 22);
+    
+    cout << "Promedio Leyton -> Waterloo: " 
+         << undergroundSystem->getAverageTime("Leyton", "Waterloo") << endl;
+         
+    cout << "Promedio Paradise -> Cambridge: " 
+         << undergroundSystem->getAverageTime("Paradise", "Cambridge") << endl; 
+         
+    delete undergroundSystem;
+    return 0;
+}
