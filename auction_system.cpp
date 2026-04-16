@@ -38,7 +38,7 @@ public:
     }
     
     int getHighestBidder(int itemId) {
-        if (itemBids[itemId]-.empty()) {
+        if (itemBids[itemId].empty()) {
             return -1;
         }
         return itemBids[itemId].rbegin()->second;
