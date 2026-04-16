@@ -50,3 +50,22 @@ public:
         return ss.str();
     }
 };
+int main() {
+    cout << "--- PRUEBA SISTEMA DE RELOJ ---" << endl;
+    
+    Clock c1(10, 30);
+    cout << "Hora inicial: " << c1.to_string() << endl;
+    
+    c1.add(90);
+    cout << "Tras sumar 90 min (Esperado 12:00): " << c1.to_string() << endl;
+    
+    c1.subtract(150);
+    cout << "Tras restar 150 min (Esperado 09:30): " << c1.to_string() << endl;
+    
+    Clock c2(9, 30);
+    if (c1 == c2) {
+        cout << "c1 y c2 representan la misma hora." << endl;
+    }
+    
+    return 0;
+}
