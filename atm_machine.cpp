@@ -1,5 +1,5 @@
+#include <iostream>
 #include <vector>
-
 using namespace std;
 
 class ATM {
@@ -42,3 +42,23 @@ public:
         return result;
     }
 };
+
+int main() {
+    cout << "--- PRUEBA ATM MACHINE ---" << endl;
+    ATM atm;
+    
+    atm.deposit({0, 0, 1, 2, 1}); 
+    cout << "Deposito realizado: 1 de $100, 2 de $200, 1 de $500" << endl;
+
+    vector<int> result = atm.withdraw(600); 
+    cout << "Intento de retiro de 600: ";
+    
+    if (result.size() == 1 && result[0] == -1) {
+        cout << "Rechazado (-1)" << endl;
+    } else {
+        for (int n : result) cout << n << " ";
+        cout << endl; 
+    }
+    
+    return 0;
+}
